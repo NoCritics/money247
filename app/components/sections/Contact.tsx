@@ -74,7 +74,8 @@ export default function Contact() {
 
                 <div>
                   <div className="text-sm text-gray-400 mb-2">Location</div>
-                  <p className="text-white text-lg leading-relaxed">г. Киев, ул. Богдана Хмельницкого, 32</p>
+                  <p className="text-white text-lg leading-relaxed">Sokolovská 87/95</p>
+                  <p className="text-white text-lg leading-relaxed">Karlín, 186 00 Prague</p>
                 </div>
               </div>
             </motion.div>

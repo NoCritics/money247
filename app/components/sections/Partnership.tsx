@@ -11,12 +11,16 @@ const partners = [
   {
     name: 'FK Jablonec',
     logo: '/FK_Jablonec_logo.png'
+  },
+  {
+    name: 'Mayak Kharkiv',
+    logo: '/mayak_kharkiv_logo.png'
   }
 ];
 
 export default function Partnership() {
   return (
-    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '320px', paddingBottom: '10px' }}>
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '220px', paddingBottom: '60px' }}>
       {/* Section Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black-700/20 to-transparent" />
 
@@ -41,7 +45,7 @@ export default function Partnership() {
         </motion.div>
 
         {/* Partners Grid */}
-        <div className="flex flex-wrap justify-center gap-12 max-w-7xl mx-auto md:pl-[140px]" style={{ marginTop: '100px' }}>
+        <div className="flex flex-wrap justify-center gap-8" style={{ marginTop: '60px', maxWidth: '768px', marginLeft: 'auto', marginRight: 'auto' }}>
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
@@ -50,44 +54,41 @@ export default function Partnership() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{
                 duration: 0.8,
-                delay: index * 0.15,
+                delay: index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
               whileHover={{ y: -8 }}
-              style={{ width: '380px' }}
+              style={{ width: '340px' }}
             >
               <GlassCard
                 variant="default"
                 className="h-full"
                 style={{
-                  paddingLeft: '48px',
-                  paddingRight: '48px',
-                  paddingTop: '48px',
-                  paddingBottom: '48px'
+                  paddingLeft: '40px',
+                  paddingRight: '40px',
+                  paddingTop: '40px',
+                  paddingBottom: '40px'
                 }}
               >
                 <div className="flex flex-col items-center h-full">
                   {/* Logo Container */}
                   <div
-                    className="relative mb-8 flex items-center justify-center"
+                    className="relative flex items-center justify-center"
                     style={{
                       width: '100%',
-                      height: '140px'
+                      height: '120px'
                     }}
                   >
                     <img
                       src={partner.logo}
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain pointer-events-none"
-                      style={{
-                        filter: 'drop-shadow(0 4px 20px rgba(238, 168, 0, 0.15))',
-                      }}
                     />
                   </div>
 
                   {/* Partner Info */}
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
+                  <div className="text-center" style={{ marginTop: '24px' }}>
+                    <h3 className="text-xl font-bold text-white leading-tight">
                       {partner.name}
                     </h3>
                   </div>

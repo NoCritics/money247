@@ -4,7 +4,9 @@ import Hero from './components/sections/Hero';
 import MarketData from './components/sections/MarketData';
 import Services from './components/sections/Services';
 import About from './components/sections/About';
+import CurrencyExchange from './components/sections/CurrencyExchange';
 import Partnership from './components/sections/Partnership';
+import Location from './components/sections/Location';
 import Contact from './components/sections/Contact';
 import SectionSeparator from './components/ui/SectionSeparator';
 import MarketTicker from './components/ui/MarketTicker';
@@ -27,6 +29,10 @@ export default function Home() {
 
       <SectionSeparator />
 
+      <CurrencyExchange />
+
+      <SectionSeparator />
+
       <Services />
 
       <SectionSeparator />
@@ -36,6 +42,10 @@ export default function Home() {
       <SectionSeparator />
 
       <Partnership />
+
+      <SectionSeparator />
+
+      <Location />
 
       <SectionSeparator />
 
