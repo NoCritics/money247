@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Poltab';
+  src: url('/fonts/Poltab-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Concourse';
+  src: url('/fonts/Concourse Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Colors */
+  --color-gold: #EEA800;
+  --color-gold-light: #FFB820;
+  --color-gold-dark: #CC8E00;
+
+  --color-teal: #00D4AA;
+  --color-teal-light: #1FFFDB;
+  --color-teal-dark: #00A885;
+
+  --color-black: #000000;
+  --color-black-900: #0A0A0F;
+  --color-black-800: #13131A;
+  --color-black-700: #1C1C26;
+  --color-black-600: #252533;
+
+  /* Animation keyframes */
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(238, 168, 0, 0.6)) drop-shadow(0 0 40px rgba(238, 168, 0, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(238, 168, 0, 0.8)) drop-shadow(0 0 60px rgba(238, 168, 0, 0.4));
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+:root {
+  /* Legacy CSS variables for custom styles */
+  --gold-primary: #EEA800;
+  --gold-light: #FFB820;
+  --gold-glow: rgba(238, 168, 0, 0.6);
+
+  --teal-primary: #00D4AA;
+  --teal-light: #1FFFDB;
+  --teal-glow: rgba(0, 212, 170, 0.4);
+
+  --black-pure: #000000;
+  --black-900: #0A0A0F;
+  --black-800: #13131A;
+  --black-700: #1C1C26;
+  --black-600: #252533;
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black-900);
+  color: white;
+  font-family: 'Poltab', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Concourse', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black-600);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Glassmorphism utility classes */
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-[20px] border border-white/[0.08];
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-gold {
+    @apply backdrop-blur-[20px] border;
+    background: rgba(238, 168, 0, 0.05);
+    border-color: rgba(238, 168, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(238, 168, 0, 0.2), inset 0 1px 0 rgba(238, 168, 0, 0.1);
+  }
+
+  .glass-card-teal {
+    @apply backdrop-blur-[20px] border;
+    background: rgba(0, 212, 170, 0.04);
+    border-color: rgba(0, 212, 170, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 212, 170, 0.15);
+  }
+
+  .glow-gold {
+    filter: drop-shadow(0 0 30px rgba(238, 168, 0, 0.5));
+  }
+
+  .glow-teal {
+    filter: drop-shadow(0 0 25px rgba(0, 212, 170, 0.4));
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(to right, #FFB820, #EEA800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(to right, #1FFFDB, #00D4AA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
