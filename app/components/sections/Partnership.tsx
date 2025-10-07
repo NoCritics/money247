@@ -43,7 +43,7 @@ export default function Partnership() {
         </motion.div>
 
         {/* Partners Grid */}
-        <div className="flex flex-wrap justify-center gap-12 max-w-5xl mx-auto md:pl-[140px]" style={{ marginTop: '100px' }}>
+        <div className="flex flex-wrap justify-center gap-12 max-w-7xl mx-auto md:pl-[140px]" style={{ marginTop: '100px' }}>
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
