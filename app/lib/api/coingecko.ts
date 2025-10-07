@@ -1,3 +1,5 @@
+import { DataCache } from '../cache';
+
 export interface CryptoPrice {
   id: string;
   symbol: string;
@@ -15,10 +17,17 @@ export interface CryptoPrice {
 }
 
 const COINGECKO_API = 'https://api.coingecko.com/api/v3';
+const CACHE_KEY = 'crypto_prices';
 
 export async function fetchCryptoPrices(
   ids: string[] = ['bitcoin', 'ethereum', 'tether', 'binancecoin']
 ): Promise<CryptoPrice[]> {
+  // Try to get fresh cached data (< 24 hours old)
+  const cachedData = DataCache.get<CryptoPrice[]>(CACHE_KEY);
+  if (cachedData) {
+    return cachedData;
+  }
+
   try {
     const response = await fetch(
       `${COINGECKO_API}/coins/markets?vs_currency=usd&ids=${ids.join(',')}&order=market_cap_desc&sparkline=true&price_change_percentage=24h`,
@@ -30,9 +39,21 @@ export async function fetchCryptoPrices(
     }
 
     const data = await response.json();
+
+    // Save to cache
+    DataCache.set(CACHE_KEY, data);
+
     return data;
   } catch (error) {
     console.error('Error fetching crypto prices:', error);
+
+    // Try to return cached data of any age as fallback
+    const fallbackData = DataCache.getAnyAge<CryptoPrice[]>(CACHE_KEY);
+    if (fallbackData) {
+      console.log('Using cached crypto prices as fallback');
+      return fallbackData;
+    }
+
     return [];
   }
 }

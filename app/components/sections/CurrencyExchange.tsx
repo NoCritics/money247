@@ -72,7 +72,7 @@ export default function CurrencyExchange() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8" style={{ marginTop: '100px' }}>
+        <div className="grid lg:grid-cols-2 gap-8" style={{ marginTop: '50px' }}>
           {/* Calculator */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -195,8 +195,8 @@ export default function CurrencyExchange() {
             <GlassCard variant="default" style={{ paddingLeft: '32px', paddingRight: '32px', paddingTop: '32px', paddingBottom: '32px', height: '100%', display: 'flex', flexDirection: 'column' }}>
               <h3 className="text-2xl font-bold mb-6 text-white">Exchange Rates</h3>
 
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto flex-1">
+                <table className="w-full h-full">
                   <thead>
                     <tr className="border-b border-white/10">
                       <th className="text-left py-3 text-gray-400 text-sm font-semibold">Currency</th>

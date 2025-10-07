@@ -5,7 +5,7 @@ import GlassCard from '../ui/GlassCard';
 
 export default function About() {
   return (
-    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '220px', paddingBottom: '60px' }}>
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
       {/* Section Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black-700/30 to-transparent" />
 
@@ -19,7 +19,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto" style={{ marginTop: '100px' }}>
+        <div className="max-w-5xl mx-auto" style={{ marginTop: '50px' }}>
           <GlassCard variant="default" className="" style={{ paddingLeft: '32px', paddingRight: '32px', paddingTop: '36px', paddingBottom: '36px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

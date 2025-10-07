@@ -32,7 +32,7 @@ export default function Location() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8" style={{ marginTop: '100px' }}>
+        <div className="grid lg:grid-cols-2 gap-8" style={{ marginTop: '50px' }}>
           {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -103,17 +103,18 @@ export default function Location() {
                   </div>
                 </div>
 
-                {/* Parking */}
+                {/* Open Hours */}
                 <div className="glass-card rounded-xl" style={{ padding: '20px', height: '96px' }}>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-gray-400 mb-2">Parking</p>
-                      <p className="text-lg font-semibold text-white">Available nearby</p>
+                      <p className="text-xs text-gray-400 mb-2">Open Hours</p>
+                      <p className="text-sm font-semibold text-white mb-1">Mon - Fri 9:00 - 19:00</p>
+                      <p className="text-sm text-gray-300">Saturday 9:00 - 18:00</p>
                     </div>
                   </div>
                 </div>

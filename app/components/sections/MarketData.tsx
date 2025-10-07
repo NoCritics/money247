@@ -10,6 +10,15 @@ export default function MarketData() {
   const [cryptoPrices, setCryptoPrices] = useState<CryptoPrice[]>([]);
   const [exchangeRates, setExchangeRates] = useState<ExchangeRate | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if mobile on mount and resize
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const loadData = async () => {
@@ -31,6 +40,9 @@ export default function MarketData() {
     const interval = setInterval(loadData, 30000);
     return () => clearInterval(interval);
   }, []);
+
+  // Show only 6 cards on mobile, all 10 on desktop
+  const displayedCrypto = isMobile ? cryptoPrices.slice(0, 6) : cryptoPrices;
 
   return (
     <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '220px', paddingBottom: '60px' }}>
@@ -56,13 +68,13 @@ export default function MarketData() {
 
         {/* Crypto Cards */}
         {loading ? (
-          <div className="flex justify-center items-center h-64" style={{ marginTop: '100px' }}>
+          <div className="flex justify-center items-center h-64" style={{ marginTop: '50px' }}>
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2" style={{ borderColor: '#EEA800' }}></div>
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16 justify-items-center" style={{ marginTop: '100px' }}>
-              {cryptoPrices.map((crypto, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16" style={{ marginTop: '50px' }}>
+              {displayedCrypto.map((crypto, index) => (
                 <motion.div
                   key={crypto.id}
                   initial={{ opacity: 0, y: 20 }}

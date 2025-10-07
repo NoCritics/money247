@@ -3,7 +3,7 @@
 export default function SectionSeparator() {
   return (
     <div className="w-full py-6 flex justify-center">
-      <div className="w-full max-w-4xl relative" style={{ height: '3px' }}>
+      <div className="w-[60%] md:w-full max-w-4xl relative" style={{ height: '3px' }}>
         {/* Base silver/gray line */}
         <div
           className="absolute inset-0"
