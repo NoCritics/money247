@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero';
 import MarketData from './components/sections/MarketData';
 import Services from './components/sections/Services';
 import About from './components/sections/About';
+import Partnership from './components/sections/Partnership';
 import Contact from './components/sections/Contact';
 import SectionSeparator from './components/ui/SectionSeparator';
 import MarketTicker from './components/ui/MarketTicker';
@@ -31,6 +32,10 @@ export default function Home() {
       <SectionSeparator />
 
       <MarketData />
+
+      <SectionSeparator />
+
+      <Partnership />
 
       <SectionSeparator />
 
