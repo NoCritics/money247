@@ -471,7 +471,7 @@ export default function Services() {
 
         {/* Grid layout for cards */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr justify-items-center md:justify-items-stretch"
           style={{ marginTop: '80px' }}
         >
           {services.map((service, index) => (

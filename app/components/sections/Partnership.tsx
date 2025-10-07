@@ -18,7 +18,7 @@ const partners = [
 
 export default function Partnership() {
   return (
-    <section className="pt-8 pb-40 px-6 w-full min-h-screen flex items-center justify-center relative">
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
       {/* Section Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black-700/20 to-transparent" />
 
@@ -32,8 +32,7 @@ export default function Partnership() {
             duration: 1,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
-          className="text-center mb-4"
-          style={{ marginTop: '-48px' }}
+          className="mt-16 md:-mt-12 text-center mb-4"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-white">
             Our Partners
@@ -44,7 +43,7 @@ export default function Partnership() {
         </motion.div>
 
         {/* Partners Grid */}
-        <div className="flex flex-wrap justify-center gap-12 max-w-5xl mx-auto" style={{ marginTop: '100px', paddingLeft: '140px' }}>
+        <div className="flex flex-wrap justify-center gap-12 max-w-5xl mx-auto md:pl-[140px]" style={{ marginTop: '100px' }}>
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}

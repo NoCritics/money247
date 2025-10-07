@@ -51,7 +51,7 @@ export default function PriceCard({
 
   return (
     <div
-      className="w-[240px] h-[200px]"
+      className="w-[182px] md:w-[240px] h-[162px] md:h-[200px]"
       style={{ perspective: '1500px' }}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
@@ -67,28 +67,28 @@ export default function PriceCard({
       >
         {/* Front Face */}
         <div
-          className="absolute inset-0 glass-card rounded-2xl"
+          className="absolute inset-0 glass-card rounded-2xl overflow-hidden"
           style={{
             backfaceVisibility: 'hidden',
-            paddingLeft: '20px',
-            paddingRight: '20px',
-            paddingTop: '20px',
-            paddingBottom: '20px'
+            paddingLeft: '16px',
+            paddingRight: '16px',
+            paddingTop: '16px',
+            paddingBottom: '16px'
           }}
         >
-          <div className="flex flex-col gap-5" style={{ paddingLeft: '2px', paddingRight: '2px' }}>
+          <div className="flex flex-col gap-3 md:gap-5" style={{ paddingLeft: '2px', paddingRight: '2px' }}>
             {/* Header */}
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold leading-tight" style={{ color: '#EEA800' }}>{symbol.toUpperCase()}</h3>
+              <h3 className="text-base md:text-lg font-bold leading-tight" style={{ color: '#EEA800' }}>{symbol.toUpperCase()}</h3>
               <div style={{ color: isPositive ? '#00D4AA' : '#EF4444' }}>
                 <p className="text-xs font-semibold leading-tight">{formatPercentage(change24h)}</p>
               </div>
             </div>
 
             {/* Price */}
-            <div className="py-1">
+            <div className="py-0.5 md:py-1">
               <motion.p
-                className="text-lg font-bold text-white leading-tight"
+                className="text-base md:text-lg font-bold text-white leading-tight"
                 initial={{ scale: 1 }}
                 animate={{ scale: [1, 1.03, 1] }}
                 transition={{
@@ -103,7 +103,7 @@ export default function PriceCard({
 
             {/* Mini Sparkline */}
             {sparkline && sparkline.length > 0 && (
-              <div className="h-16 relative mt-2">
+              <div className="h-12 md:h-16 relative mt-1 md:mt-2 overflow-hidden">
                 <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
                   <polyline
                     points={sparkline
@@ -132,13 +132,13 @@ export default function PriceCard({
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
-            padding: '26px 24px'
+            padding: '14px 16px'
           }}
         >
           <div className="flex flex-col h-full justify-center items-center">
             {/* Header */}
             <motion.div
-              className="text-center mb-5"
+              className="text-center mb-2 md:mb-4"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: isFlipped ? 1 : 0, y: isFlipped ? 0 : -10 }}
               transition={{
@@ -147,12 +147,12 @@ export default function PriceCard({
                 ease: [0.23, 1, 0.32, 1]
               }}
             >
-              <h3 className="text-sm font-bold text-white leading-tight">{name}</h3>
-              <p className="text-xs text-gray-400 mt-0.5">{symbol.toUpperCase()}</p>
+              <h3 className="text-xs md:text-sm font-bold text-white leading-tight">{name}</h3>
+              <p className="text-[10px] md:text-xs text-gray-400 mt-0.5">{symbol.toUpperCase()}</p>
             </motion.div>
 
             {/* Stats */}
-            <div className="flex flex-col gap-4 w-full">
+            <div className="flex flex-col gap-2 md:gap-3 w-full">
               <motion.div
                 className="text-center"
                 initial={{ opacity: 0, y: 10 }}
@@ -163,8 +163,8 @@ export default function PriceCard({
                   ease: [0.23, 1, 0.32, 1]
                 }}
               >
-                <p className="text-xs text-gray-400 mb-1">Volume 24h</p>
-                <p className="text-base font-bold text-teal leading-tight">{formatLargeNumber(volume)}</p>
+                <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">Volume 24h</p>
+                <p className="text-sm md:text-base font-bold text-teal leading-tight">{formatLargeNumber(volume)}</p>
               </motion.div>
 
               <motion.div
@@ -177,8 +177,8 @@ export default function PriceCard({
                   ease: [0.23, 1, 0.32, 1]
                 }}
               >
-                <p className="text-xs text-gray-400 mb-1">Market Cap</p>
-                <p className="text-base font-bold text-gold leading-tight">{formatLargeNumber(marketCap)}</p>
+                <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">Market Cap</p>
+                <p className="text-sm md:text-base font-bold text-gold leading-tight">{formatLargeNumber(marketCap)}</p>
               </motion.div>
 
               <motion.div
@@ -191,8 +191,8 @@ export default function PriceCard({
                   ease: [0.23, 1, 0.32, 1]
                 }}
               >
-                <p className="text-xs text-gray-400 mb-1">Fully Diluted Value</p>
-                <p className="text-base font-bold text-white leading-tight">{formatLargeNumber(fdv)}</p>
+                <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">Fully Diluted Value</p>
+                <p className="text-sm md:text-base font-bold text-white leading-tight">{formatLargeNumber(fdv)}</p>
               </motion.div>
             </div>
           </div>

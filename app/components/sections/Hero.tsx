@@ -6,7 +6,7 @@ import Button from '../ui/Button';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ paddingBottom: '120px' }}>
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Logo */}

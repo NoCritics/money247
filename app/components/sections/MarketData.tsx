@@ -33,7 +33,7 @@ export default function MarketData() {
   }, []);
 
   return (
-    <section className="pt-8 pb-40 px-6 w-full min-h-screen flex items-center justify-center relative">
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Title */}
         <motion.div
@@ -44,8 +44,7 @@ export default function MarketData() {
             duration: 1,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
-          className="text-center mb-4"
-          style={{ marginTop: '-48px' }}
+          className="mt-16 md:-mt-12 text-center mb-4"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-white">
             Live Market Data

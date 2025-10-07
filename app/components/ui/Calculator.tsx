@@ -177,10 +177,10 @@ export default function Calculator() {
         onClick={onClick}
         className={className}
         style={{
-          height: '52px',
-          borderRadius: '12px',
+          height: '40px',
+          borderRadius: '10px',
           fontWeight: 600,
-          fontSize: '16px',
+          fontSize: '14px',
           transition: 'all 0.2s',
           cursor: 'pointer',
           ...variantStyles[variant]
@@ -201,11 +201,11 @@ export default function Calculator() {
         className="fixed z-50 glass-card-teal border border-teal/30 hover:border-teal/50 transition-all duration-300"
         style={{
           zIndex: 9999,
-          bottom: '120px',
-          right: '32px',
-          width: '56px',
-          height: '56px',
-          borderRadius: '16px',
+          bottom: '80px',
+          right: '16px',
+          width: '48px',
+          height: '48px',
+          borderRadius: '12px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
@@ -251,39 +251,39 @@ export default function Calculator() {
             className="fixed z-50 glass-card rounded-2xl shadow-2xl"
             style={{
               zIndex: 9998,
-              bottom: '190px',
-              right: '32px',
-              width: '340px',
-              paddingLeft: '28px',
-              paddingRight: '28px',
-              paddingTop: '22px',
-              paddingBottom: '22px'
+              bottom: '140px',
+              right: '16px',
+              width: '280px',
+              paddingLeft: '18px',
+              paddingRight: '18px',
+              paddingTop: '16px',
+              paddingBottom: '16px'
             }}
           >
             {/* Header */}
-            <div style={{ marginBottom: '14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <h3 className="text-lg font-bold text-gradient-teal">
+            <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <h3 className="text-base font-bold text-gradient-teal">
                 {mode === 'calculator' ? 'Calculator' : 'Currency Exchange'}
               </h3>
               <button
                 onClick={() => setMode(mode === 'calculator' ? 'currency' : 'calculator')}
-                className="text-xs text-teal hover:text-teal-light transition-colors"
+                className="text-[10px] text-teal hover:text-teal-light transition-colors"
                 style={{ cursor: 'pointer' }}
               >
-                {mode === 'calculator' ? '💱 Exchange' : '🧮 Calc'}
+                {mode === 'calculator' ? '💱' : '🧮'}
               </button>
             </div>
 
             {/* Mode Toggle Tabs */}
-            <div style={{ marginBottom: '16px', display: 'flex', gap: '8px', padding: '4px', background: 'rgba(0, 0, 0, 0.3)', borderRadius: '12px' }}>
+            <div style={{ marginBottom: '12px', display: 'flex', gap: '6px', padding: '3px', background: 'rgba(0, 0, 0, 0.3)', borderRadius: '10px' }}>
               <button
                 onClick={() => setMode('currency')}
                 className="transition-all duration-200"
                 style={{
                   flex: 1,
-                  padding: '8px 16px',
-                  borderRadius: '8px',
-                  fontSize: '14px',
+                  padding: '6px 12px',
+                  borderRadius: '7px',
+                  fontSize: '12px',
                   fontWeight: 600,
                   background: mode === 'currency' ? 'rgba(0, 212, 170, 0.2)' : 'transparent',
                   color: mode === 'currency' ? '#00D4AA' : '#9CA3AF',
@@ -298,9 +298,9 @@ export default function Calculator() {
                 className="transition-all duration-200"
                 style={{
                   flex: 1,
-                  padding: '8px 16px',
-                  borderRadius: '8px',
-                  fontSize: '14px',
+                  padding: '6px 12px',
+                  borderRadius: '7px',
+                  fontSize: '12px',
                   fontWeight: 600,
                   background: mode === 'calculator' ? 'rgba(0, 212, 170, 0.2)' : 'transparent',
                   color: mode === 'calculator' ? '#00D4AA' : '#9CA3AF',
@@ -317,23 +317,23 @@ export default function Calculator() {
               <motion.div
                 className="bg-black/40 rounded-xl border border-white/5"
                 style={{
-                  marginBottom: '20px',
-                  paddingLeft: '20px',
-                  paddingRight: '20px',
-                  paddingTop: '14px',
-                  paddingBottom: '14px'
+                  marginBottom: '14px',
+                  paddingLeft: '14px',
+                  paddingRight: '14px',
+                  paddingTop: '10px',
+                  paddingBottom: '10px'
                 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
               >
                 {/* From Currency */}
-                <div style={{ marginBottom: '12px' }}>
+                <div style={{ marginBottom: '8px' }}>
                   <select
                     value={fromCurrency.code}
                     onChange={(e) => setFromCurrency(CURRENCIES.find(c => c.code === e.target.value) || CURRENCIES[0])}
-                    className="text-xs text-gray-400 bg-transparent border-none outline-none"
-                    style={{ cursor: 'pointer', marginBottom: '4px' }}
+                    className="text-[10px] text-gray-400 bg-transparent border-none outline-none"
+                    style={{ cursor: 'pointer', marginBottom: '3px' }}
                   >
                     {CURRENCIES.map(curr => (
                       <option key={curr.code} value={curr.code} style={{ background: '#0A0A0F' }}>
@@ -341,14 +341,14 @@ export default function Calculator() {
                       </option>
                     ))}
                   </select>
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'baseline', gap: '4px' }}>
-                    <span className="text-lg text-gray-400">{fromCurrency.symbol}</span>
-                    <span className="text-2xl font-bold text-white">{display}</span>
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'baseline', gap: '3px' }}>
+                    <span className="text-sm text-gray-400">{fromCurrency.symbol}</span>
+                    <span className="text-lg font-bold text-white">{display}</span>
                   </div>
                 </div>
 
                 {/* Exchange Arrow */}
-                <div className="flex justify-center" style={{ marginBottom: '12px' }}>
+                <div className="flex justify-center" style={{ marginBottom: '8px' }}>
                   <button
                     onClick={() => {
                       const temp = fromCurrency;
@@ -412,7 +412,7 @@ export default function Calculator() {
             {/* Buttons Grid */}
             <motion.div
               className="grid grid-cols-4"
-              style={{ gap: '12px' }}
+              style={{ gap: '8px' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -449,8 +449,8 @@ export default function Calculator() {
 
             {/* Footer */}
             <motion.div
-              className="text-center text-xs text-gray-500"
-              style={{ marginTop: '16px' }}
+              className="text-center text-[10px] text-gray-500"
+              style={{ marginTop: '10px' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}

@@ -5,12 +5,12 @@ import GlassCard from '../ui/GlassCard';
 
 export default function About() {
   return (
-    <section className="pt-8 pb-40 px-6 w-full min-h-screen flex items-center justify-center relative">
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
       {/* Section Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black-700/30 to-transparent" />
 
       <div className="max-w-5xl mx-auto w-full relative z-10">
-        <div className="text-center mb-4" style={{ marginTop: '-48px' }}>
+        <div className="mt-16 md:-mt-12 text-center mb-4">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 leading-tight text-white">
             About Money <span style={{ fontFamily: 'Poltab, -apple-system, sans-serif' }}>24/7</span>
           </h2>
