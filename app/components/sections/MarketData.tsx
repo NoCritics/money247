@@ -33,7 +33,7 @@ export default function MarketData() {
   }, []);
 
   return (
-    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '220px', paddingBottom: '60px' }}>
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Title */}
         <motion.div

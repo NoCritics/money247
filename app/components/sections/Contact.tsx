@@ -6,7 +6,7 @@ import Button from '../ui/Button';
 
 export default function Contact() {
   return (
-    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '220px', paddingBottom: '60px' }}>
       {/* Section Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/5 to-transparent" />
 
@@ -59,22 +59,22 @@ export default function Contact() {
                 <div>
                   <div className="text-sm text-gray-400 mb-2">Phone</div>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+380685000001"
                     className="text-white hover:text-gradient-gold transition-colors text-lg"
                   >
-                    +1 (234) 567-8900
+                    +38 (068) 500-00-01
                   </a>
                 </div>
 
                 <div>
-                  <div className="text-sm text-gray-400 mb-2">Support</div>
-                  <p className="text-white text-lg">24/7 Live Chat Available</p>
+                  <div className="text-sm text-gray-400 mb-2">Hours</div>
+                  <p className="text-white text-lg">Пн-Пт 09:00 - 20:00</p>
+                  <p className="text-white text-lg">Сб-Вс 10:00 - 18:00</p>
                 </div>
 
                 <div>
                   <div className="text-sm text-gray-400 mb-2">Location</div>
-                  <p className="text-white text-lg leading-relaxed">Global Operations</p>
-                  <p className="text-sm text-gray-400 mt-1">Serving 150+ Countries</p>
+                  <p className="text-white text-lg leading-relaxed">г. Киев, ул. Богдана Хмельницкого, 32</p>
                 </div>
               </div>
             </motion.div>
@@ -100,10 +100,7 @@ export default function Contact() {
 
               <div className="flex flex-col gap-5 w-full">
                 <Button variant="gold" size="sm" className="w-full">
-                  Get Started Now
-                </Button>
-                <Button variant="outline" size="sm" className="w-full">
-                  Learn More
+                  Contact Us
                 </Button>
               </div>
             </motion.div>

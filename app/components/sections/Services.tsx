@@ -304,7 +304,7 @@ function ServiceCard({ service, index, isExpanded, onExpand, onCollapse }: Servi
                 {service.expandedContent.map((feature) => (
                   <div
                     key={feature.title}
-                    className="glass-card-gold rounded-xl"
+                    className="glass-card rounded-xl"
                     style={{ paddingLeft: '28px', paddingRight: '28px', paddingTop: '24px', paddingBottom: '24px' }}
                   >
                     <h4 className="text-lg md:text-xl font-bold text-white mb-3 leading-snug" style={{ paddingLeft: '4px', paddingRight: '4px' }}>
@@ -425,17 +425,13 @@ function ServiceCard({ service, index, isExpanded, onExpand, onCollapse }: Servi
                 </p>
               </div>
 
-              <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
+              <div className="mt-auto pt-6 flex items-center justify-center">
                 <span className="text-white font-semibold hover:text-gray-300 transition-colors inline-flex items-center gap-2">
                   Learn More
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
-
-                <div className="w-14 h-14 rounded-full glass-card flex items-center justify-center">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-gold to-teal" />
-                </div>
               </div>
             </div>
           </div>
@@ -449,7 +445,7 @@ export default function Services() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
-    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '220px', paddingBottom: '60px' }}>
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

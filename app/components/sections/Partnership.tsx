@@ -6,19 +6,17 @@ import GlassCard from '../ui/GlassCard';
 const partners = [
   {
     name: 'FC Dynamo Kyiv',
-    logo: '/FC_Dynamo_Kyiv_logo.svg.png',
-    description: 'Official Financial Partner'
+    logo: '/FC_Dynamo_Kyiv_logo.svg.png'
   },
   {
     name: 'FK Jablonec',
-    logo: '/FK_Jablonec_logo.png',
-    description: 'Strategic Partner'
+    logo: '/FK_Jablonec_logo.png'
   }
 ];
 
 export default function Partnership() {
   return (
-    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '120px', paddingBottom: '160px' }}>
+    <section className="px-6 w-full min-h-screen flex items-center justify-center relative" style={{ paddingTop: '320px', paddingBottom: '10px' }}>
       {/* Section Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black-700/20 to-transparent" />
 
@@ -92,9 +90,6 @@ export default function Partnership() {
                     <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
                       {partner.name}
                     </h3>
-                    <p className="text-base text-gray-400 leading-relaxed">
-                      {partner.description}
-                    </p>
                   </div>
                 </div>
               </GlassCard>

@@ -442,7 +442,7 @@ export default function Calculator() {
               <Button onClick={() => performOperation('+')} variant="operator">+</Button>
 
               {/* Row 5 */}
-              <Button onClick={() => inputDigit('0')} style={{ gridColumn: 'span 2' }}>0</Button>
+              <Button onClick={() => inputDigit('0')} className="col-span-2">0</Button>
               <Button onClick={inputDecimal}>.</Button>
               <Button onClick={() => performOperation('=')} variant="equals">=</Button>
             </motion.div>

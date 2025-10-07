@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import InfinitySymbol from '../ui/InfinitySymbol';
-import Button from '../ui/Button';
 
 export default function Hero() {
   return (
@@ -55,58 +54,6 @@ export default function Hero() {
         >
           Your Gateway to Financial Freedom
         </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 1.2,
-            ease: [0.25, 0.46, 0.45, 0.94]
-          }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-        >
-          <Button variant="gold" size="lg">
-            Get Started
-          </Button>
-          <Button variant="outline" size="lg">
-            Learn More
-          </Button>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 1.6,
-            ease: "easeOut"
-          }}
-          className="absolute left-1/2 transform -translate-x-1/2"
-          style={{ bottom: '-52px' }}
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-6 h-10 border-2 border-gold rounded-full flex items-start justify-center p-2"
-          >
-            <motion.div
-              className="w-1.5 h-1.5 bg-gold rounded-full"
-              animate={{ y: [0, 16, 0] }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
